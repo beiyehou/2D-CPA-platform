@@ -1,0 +1,53 @@
+/*******************************************************************************
+
+    Author    : Herve Donati
+    Contact   : herve.donati@ac-caen.fr
+    Home Site : http://www.ac-caen.fr
+    Program  :  Predict
+
+*******************************************************************************/
+
+
+----[ Purpose
+
+    Use RRD feature PREDICT to display "normal" datasource value,
+    even in the future !
+
+----[ Features
+
+	PA 2.0 Compatible
+    RRDTOOL needs to be at least 1.4.x
+
+----[ Installation
+
+	Plugin is Plugin Architecture 2.0 only compatible
+	To install, place it in your plugin directory in a folder called "predict"
+	Then login to Cacti, goto Plugin Management and click "Install" next to the plugin's name
+    Don't forget to manage then users realm permission to grant access
+    Default settings may be set under "Misc" Tab in "Settings" general page
+    Subdirectory tmp in $CACTI/plugins/predict/ must be writable to apache user
+    
+----[ Possible Bugs?
+   
+	If you find a problem, let me know !
+	herve.donati@ac-caen.fr
+
+----[ Future Changes
+    
+	Got any ideas or complaints, please e-mail me !
+
+----[ Changelog
+
+	--- 0.1 ---
+		Initial release
+	--- 0.1.1 ---
+        Temporary file name now depends on php hash module installed or not
+        Put default settings at plugin installation
+    --- 0.1.2 ---
+        Verify rrdtool function before installing the plugin
+        Simplify settings insert request
+    --- 0.1.3 ---
+        Escape colon character in RRD file name and remove spaces in ds name for Windows users.
+    --- 1.0.0 ---
+        Compatibility with postgreSql databases (useful for GroundWork users, thx Glenn Herteg)
+        Several display bugs corrected
